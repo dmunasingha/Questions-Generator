@@ -154,5 +154,3 @@ Special thanks to the developers of spaCy and scikit-learn for their amazing lib
 2. **Clear Sections**: Introduction, installation, usage, example, and contribution guidelines are clearly separated.
 3. **Code Blocks**: Code snippets for installation, usage, and file structure to make it easy to follow.
 4. **Future Goals**: A dedicated section to inspire future contributions and improvements.
-
-This README provides a professional yet approachable presentation for your project. Let me know if you need any adjustments or further enhancements!
