@@ -148,9 +148,3 @@ Special thanks to the developers of spaCy and scikit-learn for their amazing lib
 ---
 
 > **Disclaimer**: This project is for educational purposes and is constantly evolving. Feel free to explore, contribute, and adapt it to your 
-
-### Key Features of This README:
-1. **Badges**: Visual indicators for Python version, library versions, license, status, and more.
-2. **Clear Sections**: Introduction, installation, usage, example, and contribution guidelines are clearly separated.
-3. **Code Blocks**: Code snippets for installation, usage, and file structure to make it easy to follow.
-4. **Future Goals**: A dedicated section to inspire future contributions and improvements.
