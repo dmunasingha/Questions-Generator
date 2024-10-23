@@ -137,7 +137,7 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 ## 👥 Contributors
 
 - **Dunith Munasingha** - *Lead Developer* 💻  
-  Reach me at [your.email@example.com](mailto:munasingha.dunith@gmail.com)
+  Reach me at [munasingha.dunith@gmail.com](mailto:munasingha.dunith@gmail.com)
 
 ---
 
