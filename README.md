@@ -120,7 +120,11 @@ Planned File structure to be implemented in the future with a model
  ┣ 📂 models
  ┃ ┣ 📜 question_generator.py
  ┣ 📂 static
- ┃ ┣ 📜 style.css
+ ┃ ┣ 📂 js
+ ┃ ┣ ┣ 📜 formValidator.js
+ ┃ ┣ ┣ 📜 home.js
+ ┃ ┣ 📂 css
+ ┃ ┣ ┣ 📜 style.css
  ┣ 📂 templates
  ┃ ┣ 📜 about.html
  ┃ ┣ 📜 base.html
