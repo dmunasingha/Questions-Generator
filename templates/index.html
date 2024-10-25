@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1>Welcome to Questions Generator AI!</h1>
-<p class="text-muted">An advanced, human-like question generation system built from scratch. This project dynamically
+<p>An advanced, human-like question generation system built from scratch. This project dynamically
     learns from your input notes and data, mimicking human intelligence to generate insightful questions, fully
     personalized to the text you provide. No templates, just pure learning and reasoning! 🌟</p>
 
@@ -27,6 +27,6 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='js/home.js') }}"></script> <!-- External JS file -->
-<script src="{{ url_for('static', filename='js/formValidator.js') }}"></script> <!-- External JS file -->
+<script src="{{ url_for('static', filename='js/home.js') }}" defer></script> <!-- External JS file -->
+<script src="{{ url_for('static', filename='js/formValidator.js') }}" defer></script> <!-- External JS file -->
 {% endblock %}
