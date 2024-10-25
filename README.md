@@ -50,6 +50,17 @@ After installing `spaCy`, download the required language model:
 ```bash
 python -m spacy download en_core_web_sm
 ```
+### 4. Copy .env file
+After installing the `spaCy Model`, copy the `.env.example` into `.env`:
+
+For Windows
+```bash
+copy .env.example .env
+```
+For Unix-like systems (Linux or macOS)
+```
+cp .env.example .env
+```
 
 ---
 
@@ -63,6 +74,15 @@ python -m spacy download en_core_web_sm
      ```
 
    - The system will prompt you to input your notes, and then it will generate a set of human-like questions based on your input.
+
+2. **Web App (Flask)**:
+   - Start the Flask server:
+
+     ```bash
+     python app.py
+     ```
+
+   - Navigate to ```http://localhost:5000``` in your browser to access the web-based interface for inputting notes and viewing generated questions.
 ---
 
 ## 🌟 Example
@@ -91,19 +111,25 @@ Technology plays a transformative role in education by enhancing learning experi
 ### File Structure
 Planned File structure to be implemented in the future with a model
 ```
-📦 question-generation-ai
+📦 question-generation
  ┣ 📂 data
  ┃ ┣ 📜 dataset.json
+ ┣ 📂 controllers
+ ┃ ┣ 📜 home_controller.py
+ ┃ ┣ 📜 about_controller.py
  ┣ 📂 models
  ┃ ┣ 📜 question_generator.py
  ┣ 📂 static
  ┃ ┣ 📜 style.css
  ┣ 📂 templates
+ ┃ ┣ 📜 about.html
+ ┃ ┣ 📜 base.html
  ┃ ┣ 📜 index.html
  ┣ 📜 app.py          # Flask app
  ┣ 📜 index.py        # Main CLI entry point
  ┣ 📜 requirements.txt
  ┣ 📜 README.md
+ ┣ 📜 SECURITY.md
 ```
 
 ---
