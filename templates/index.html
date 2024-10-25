@@ -1,9 +1,32 @@
-<!-- templates/index.html -->
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
 <h1>Welcome to Questions Generator AI!</h1>
-<p>Render the input field for notes here and button to generate</p>
+<p class="text-muted">An advanced, human-like question generation system built from scratch. This project dynamically
+    learns from your input notes and data, mimicking human intelligence to generate insightful questions, fully
+    personalized to the text you provide. No templates, just pure learning and reasoning! 🌟</p>
+
+<form id="questionForm" method="post" class="mt-5">
+    <div class="alert alert-danger" id="validationAlert" style="display: none;" role="alert"></div>
+    <div class="mb-3">
+        <label for="note" class="form-label">Note</label>
+        <textarea class="form-control" name="note" id="note" rows="10" data-min-length="10" data-required="true"
+            data-required-message="Note field is required."
+            data-min-length-message="Note must be at least 10 characters long."></textarea>
+    </div>
+    <button type="submit" class="btn btn-dark">Generate</button>
+</form>
+
+<div id="questionsContainer" style="display: none;" class="mt-4">
+    <h2>Generated Questions:</h2>
+    <ul id="questionsList"></ul>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script> <!-- External JS file -->
+<script src="{{ url_for('static', filename='js/formValidator.js') }}"></script> <!-- External JS file -->
 {% endblock %}
