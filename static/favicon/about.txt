@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: League Gothic
+- Font Author: undefined
+- Font Source: https://fonts.gstatic.com/s/leaguegothic/v11/qFdR35CBi4tvBz81xy7WG7ep-BQAY7Krj7feObpH_-amidQ6Q9hn.ttf
+- Font License: undefined

@@ -4,6 +4,7 @@ import random
 # Load the spaCy English model
 nlp = spacy.load("en_core_web_sm")
 
+
 def generate_questions(notes):
     # Process the input text with spaCy
     doc = nlp(notes)
@@ -19,19 +20,22 @@ def generate_questions(notes):
                 if token.tag_ in {"VBZ", "VBP"}:  # Present tense verbs
                     subject = [w for w in token.children if w.dep_ == "nsubj"]
                     if subject:
-                        questions.append(f"Does {subject[0].text} {token.lemma_} ...?")
+                        questions.append(f"Does {subject[0].text} {
+                                         token.lemma_} ...?")
                         questions.append(f"What does {token.lemma_} ...?")
-                
+
                 if token.tag_ == "VBD":  # Past tense verbs
                     subject = [w for w in token.children if w.dep_ == "nsubj"]
                     if subject:
-                        questions.append(f"Did {subject[0].text} {token.lemma_} ...?")
-                        questions.append(f"What happened when {subject[0].text} {token.lemma_} ...?")
+                        questions.append(f"Did {subject[0].text} {
+                                         token.lemma_} ...?")
+                        questions.append(f"What happened when {
+                                         subject[0].text} {token.lemma_} ...?")
 
             # Generate questions based on other parts of the sentence
             if token.dep_ == "dobj":  # Direct object
                 questions.append(f"What is {token.text}?")
-            
+
             if token.dep_ == "prep":  # Preposition for context
                 questions.append(f"What is the significance of {token.text}?")
 
@@ -40,11 +44,13 @@ def generate_questions(notes):
     unique_questions = list(set(questions))
     return unique_questions
 
-# Get user input
-user_notes = input("Enter your notes: ")
-generated_questions = generate_questions(user_notes)
 
-# Display the generated questions
-print("\nGenerated Questions:")
-for question in generated_questions:
-    print(question)
+if __name__ == "__main__":
+    # Get user input
+    user_notes = input("Enter your notes: ")
+    generated_questions = generate_questions(user_notes)
+
+    # Display the generated questions
+    print("\nGenerated Questions:")
+    for question in generated_questions:
+        print(question)

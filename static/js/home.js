@@ -27,10 +27,9 @@ $(document).ready(function () {
 
         if (response.status === 'success') {
             $('#questionsContainer').show();  // Show the questions container
-            // response.questions.forEach(function (question) {
-            //     questionsList.append($('<li>').text(question));  // Append each question as a list item
-            // });
-            questionsList.append($('<li>').text(response.questions));  // Append each question as a list item
+            response.questions.forEach(function (question) {
+                questionsList.append($('<li>').text(question));  // Append each question as a list item
+            });
         } else {
             formValidator.showErrors(response.errors);
         }

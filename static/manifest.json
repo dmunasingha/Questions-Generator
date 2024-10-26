@@ -1,21 +1,39 @@
 {
-    "short_name": "Questions Generator AI",
-    "name": "Questions Generator AI",
-    "icons": [
-      {
-        "src": "/static/icons/icon-192x192.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "/static/icons/icon-512x512.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-    ],
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#000000"
-  }
-  
+  "short_name": "Questions Generator AI",
+  "name": "Questions Generator AI",
+  "description": "An AI-powered tool to generate questions easily.",
+  "icons": [
+    {
+      "src": "/static/favicon/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/favicon/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
+  "scope": "/",
+  "dir": "ltr",
+  "lang": "en",
+  "related_applications": [],
+  "screenshots": [
+    {
+      "src": "/static/screenshots/Screenshot1.png",
+      "sizes": "1919x993",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/static/screenshots/Screenshot3.png",
+      "sizes": "412x892",
+      "type": "image/png"
+    }
+  ]
+}

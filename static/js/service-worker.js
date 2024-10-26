@@ -1,6 +1,7 @@
 const cacheName = 'pwa-v1';
 const resourcesToCache = [
     '/',
+    '/about',
     '/static/css/style.css',
     '/static/js/home.js',
     '/static/js/formValidator.js',
@@ -16,18 +17,28 @@ self.addEventListener('install', (event) => {
     );
     self.skipWaiting(); // Forces waiting service workers to become active
 });
-
+// Remove old caches upon activation
 self.addEventListener('activate', (event) => {
-    event.waitUntil(self.clients.claim()); // Take control of clients as soon as it's activated
+    const cacheWhitelist = [cacheName]; // The cache you want to keep
+
+    event.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cache) => {
+                    if (cacheWhitelist.indexOf(cache) === -1) {
+                        return caches.delete(cache); // Delete old caches
+                    }
+                })
+            );
+        })
+    );
+    self.clients.claim(); // Take control of clients as soon as it's activated
 });
 
 self.addEventListener('fetch', (event) => {
-    console.log('Fetch event for:', event.request.url); // Log every fetch request
-
     event.respondWith(
         caches.match(event.request).then((response) => {
             if (response) {
-                console.log('Serving from cache:', event.request.url);
                 return response; // Return cached response
             }
 
@@ -46,7 +57,6 @@ self.addEventListener('fetch', (event) => {
 
                 return response; // Return the original response
             }).catch((error) => {
-                console.error('Fetching failed:', error);
                 if (event.request.mode === 'navigate') {
                     return caches.match('/offline.html'); // Fallback to offline page
                 }

@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/static/js/service-worker.js', { scope: '/' })
             .then((registration) => {
-                console.log('Service Worker registered:', registration);
             })
             .catch((error) => {
                 console.log('Service Worker registration failed:', error);
@@ -23,4 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listeners for online and offline events
     window.addEventListener('online', handleConnectionChange);
     window.addEventListener('offline', handleConnectionChange);
+
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e; // Save the event for later use
+        // Show your own install button if you like
+        const installButton = document.querySelector('#installButton');
+        installButton.style.display = 'block';
+
+        installButton.addEventListener('click', () => {
+            deferredPrompt.prompt(); // Show the install prompt
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                } else {
+                    console.log('User dismissed the install prompt');
+                }
+                deferredPrompt = null;
+            });
+        });
+    });
+
 });
